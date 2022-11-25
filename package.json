@@ -1,0 +1,32 @@
+{
+  "name": "electronGauth",
+  "version": "1.2.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron ."
+  },
+  "build": {
+    "win": {
+      "target": "nsis",
+      "icon": "img/icon.png"
+    },
+    "mac": {
+      "target": "dmg",
+      "icon": "img/icon.icns"
+    },
+    "linux": {
+      "target": "AppImage",
+      "icon": "img/icon.ico"
+    }
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^21.3.0"
+  },
+  "dependencies": {
+    "ejs": "^3.1.8"
+  }
+}

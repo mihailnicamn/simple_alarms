@@ -9,7 +9,7 @@ class Alarm {
         var time_now = new Date().toLocaleTimeString().toString().split(":");
         this.list.forEach((alarm) => {
             console.log("verified, alarm is " + JSON.stringify(alarm));
-            if (alarm.time == time_now[0] + ":" + time_now[1] && alarm.triggered == false && alarm.last_verified !== time_now[0] + ":" + time_now[1]) {
+            if (alarm.time == time_now[0] + ":" + time_now[1] && alarm.triggered == false && alarm.last_verified !== time_now[0] + ":" + time_now[1] || alarm.run == true) {
                 console.log("running alarm", JSON.stringify(alarm));
                 alarm.triggered = true;
                 alarm.last_verified = time_now[0] + ":" + time_now[1];
@@ -76,7 +76,7 @@ const _cancelAddAlarm = () => {
 const addAlarm = () => {
     const time = $("#alarm_time").val();
     const message = $("#alarm_message").val();
-    alarm_manager.addAlarm({ time: time, message: message, triggered: false, last_verified: new Date().toLocaleTimeString().toString() });
+    alarm_manager.addAlarm({ time: time, message: message, triggered: false, last_verified: new Date().toLocaleTimeString().toString(), run: true });
     alarm_manager.loadAlarms();
     alarm_manager.renderAlarms();
     _cancelAddAlarm();

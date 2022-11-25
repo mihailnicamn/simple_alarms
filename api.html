@@ -20,11 +20,14 @@
 
   <div class="card  text-center">
     <div class="card-body">
+      <div class="btn-group mb-4 w-100" role="group" aria-label="Basic example">
       <button onclick="_addAlarm()" data-toggle="modal" data-target="#addAlarm_modal"
-        class="btn btn-primary w-100 mb-4">Add Alarm</button>
+        class="btn btn-primary w-100 ">Add Alarm</button>
+
+      <button class="btn btn-danger  w-100" onclick="stopAlarms()" >Stop All</button>
+    </div>
       <ul class="list-group" id="alarm_list">
       </ul>
-      <button class="btn btn-danger mt-4 w-100" onclick="stopAlarms()" >Stop All</button>
     </div>
   </div>
   <script src="api.js"></script>
